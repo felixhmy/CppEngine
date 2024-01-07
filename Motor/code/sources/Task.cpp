@@ -4,6 +4,44 @@
 
 namespace engine 
 {
+    InputTask::InputTask(Scene* scene) : Task(scene) {}
+
+    void InputTask::execute(float t) 
+    {
+        
+        SDL_Event event;
+
+        while (SDL_PollEvent(&event)) 
+        {
+            if (event.type == SDL_KEYDOWN) 
+            {
+                KeyPress(event.key.keysym.sym);
+            }
+        }
+    }
+
+
+    void InputTask::KeyPress(SDL_Keycode key) 
+    {
+        // Falta el encapsularlo para que pase a traves de la clase Keyboard para que a la hora de usarlo en la Demo, se usen las de Keyboard
+        switch (key) 
+        {
+        case SDLK_UP:
+            // Flecha ARRIBA
+            break;
+        case SDLK_DOWN:
+            // Flecha ABAJO
+            break;
+        case SDLK_LEFT:
+            // Flecha IZQUIERDA
+            break;
+        case SDLK_RIGHT:
+            // Flecha DERECHA
+            break;
+        }
+    }
+
+
     RenderTask::RenderTask(Scene* scene) : Task(scene) 
     {
         renderer = make_shared<glt::Render_Node>();
@@ -51,7 +89,6 @@ namespace engine
         }
 
         renderer->render();
-
 
         scene->get_window()->swap_buffers();
     }

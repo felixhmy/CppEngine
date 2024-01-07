@@ -3,23 +3,26 @@
 #include <iostream>
 #include <memory>
 #include <list>
+#include <SDL.h>
 
 #include "System.hpp"
 #include "Scene.hpp"
 #include "Component.hpp"
 
+// OpenGL-toolkit
 #include "Model_Obj.hpp"
 #include "Render_Node.hpp"
 #include "Light.hpp"
 #include "Camera.hpp"
+#include "Cube.hpp"
+#include "Model.hpp"
 
 using namespace std;
 
 namespace engine 
 {
-
-    class Task 
-    {
+    // Tarea "padre"
+    class Task {
     protected:
         Scene* scene;
 
@@ -28,13 +31,25 @@ namespace engine
         virtual void execute(float t) = 0;
     };
 
+    // Input del usuario
     class InputTask : public Task 
     {
     public:
-        InputTask(Scene* scene) : Task(scene) {}
+        InputTask(Scene* scene);
+        void execute(float t) override;
+
+    private:
+        void KeyPress(SDL_Keycode key);
+    };
+
+    // Update del sistema
+    class UpdateTask : public Task
+    {
+    public:
         void execute(float t) override;
     };
 
+    // Render de las partes
     class RenderTask : public Task 
     {
         list<shared_ptr<Model_Component>> components;

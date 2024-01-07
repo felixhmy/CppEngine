@@ -3,10 +3,13 @@
 #pragma once
 
 #include "internal/Window.hpp"
+#include "Component.hpp"
 #include "Entity.hpp"
-#include "Task.hpp"
-#include "System.hpp"
 #include "Kernel.hpp"
+#include "Scene.hpp"
+#include "System.hpp"
+#include "Task.hpp"
+#include "Timer.hpp"
 
 
 #include <map>
