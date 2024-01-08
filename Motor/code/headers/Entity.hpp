@@ -5,6 +5,8 @@
 #include <map>
 #include <string>
 #include <memory>
+
+#include "Task.hpp"
 #include "Component.hpp"
 
 namespace engine
@@ -16,6 +18,7 @@ namespace engine
 
     public:
         void add(const std::string& id, std::shared_ptr<Component> component); //Añadir a la malla
+
         auto& get_transform();
     };
 

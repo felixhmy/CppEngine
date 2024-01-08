@@ -8,6 +8,7 @@
 #include "System.hpp"
 #include "Scene.hpp"
 #include "Component.hpp"
+#include "internal/Keyboard.hpp"
 
 // OpenGL-toolkit
 #include "Model_Obj.hpp"

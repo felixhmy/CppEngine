@@ -26,17 +26,17 @@ namespace engine
         // Falta el encapsularlo para que pase a traves de la clase Keyboard para que a la hora de usarlo en la Demo, se usen las de Keyboard
         switch (key) 
         {
-        case SDLK_UP:
-            // Flecha ARRIBA
+        case Keyboard::KEY_W:
+            // ARRIBA
             break;
-        case SDLK_DOWN:
-            // Flecha ABAJO
+        case Keyboard::KEY_S:
+            // ABAJO
             break;
-        case SDLK_LEFT:
-            // Flecha IZQUIERDA
+        case Keyboard::KEY_A:
+            // IZQUIERDA
             break;
-        case SDLK_RIGHT:
-            // Flecha DERECHA
+        case Keyboard::KEY_D:
+            // DERECHA
             break;
         }
     }
@@ -61,12 +61,15 @@ namespace engine
         light->translate(glt::Vector3(0, 0, 1));
     }
 
+    // Se llama desde System
     shared_ptr<Component> RenderTask::create_component(const std::string & modelPath) 
     {
         // Crear un componente
         auto component = make_shared<Model_Component>();
         // Añadirle un modelo en 3D
+        //auto model = make_shared <glt::Model_Obj>(modelPath);
         component->model = shared_ptr<Model>(new Model_Obj(modelPath));
+        
         // Asignarle un ID unico para el objeto
         /// Normalmente se pone le asocia el ID de su propio componente
         renderer->add("ID-de-componente-unico", component->model);

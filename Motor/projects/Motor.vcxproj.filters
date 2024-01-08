@@ -13,10 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Headers\internals">
+    <Filter Include="Headers\internal">
       <UniqueIdentifier>{e4f4fc4f-b96e-4a70-b33f-63d650ce1779}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Sources\internals">
+    <Filter Include="Sources\internal">
       <UniqueIdentifier>{1694878c-9e45-468a-80fc-1c54f4a3d0c9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -43,16 +43,16 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="..\code\headers\internal\declarations.hpp">
-      <Filter>Headers\internals</Filter>
+      <Filter>Headers\internal</Filter>
     </ClInclude>
     <ClInclude Include="..\code\headers\internal\initialize.hpp">
-      <Filter>Headers\internals</Filter>
+      <Filter>Headers\internal</Filter>
     </ClInclude>
     <ClInclude Include="..\code\headers\internal\Keyboard.hpp">
-      <Filter>Headers\internals</Filter>
+      <Filter>Headers\internal</Filter>
     </ClInclude>
     <ClInclude Include="..\code\headers\internal\Window.hpp">
-      <Filter>Headers\internals</Filter>
+      <Filter>Headers\internal</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -78,16 +78,16 @@
       <Filter>Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\code\sources\internal\finalize.cpp">
-      <Filter>Sources\internals</Filter>
+      <Filter>Sources\internal</Filter>
     </ClCompile>
     <ClCompile Include="..\code\sources\internal\initialize.cpp">
-      <Filter>Sources\internals</Filter>
+      <Filter>Sources\internal</Filter>
     </ClCompile>
     <ClCompile Include="..\code\sources\internal\Keyboard.cpp">
-      <Filter>Sources\internals</Filter>
+      <Filter>Sources\internal</Filter>
     </ClCompile>
     <ClCompile Include="..\code\sources\internal\Window.cpp">
-      <Filter>Sources\internals</Filter>
+      <Filter>Sources\internal</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

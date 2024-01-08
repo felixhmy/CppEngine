@@ -34,8 +34,9 @@ namespace engine
         Kernel kernel;
 
         InputTask input_task;
-
+        UpdateTask update_task;
         RenderTask render_task;
+
 
         
 
