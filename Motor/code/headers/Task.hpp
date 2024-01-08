@@ -5,18 +5,12 @@
 #include <list>
 #include <SDL.h>
 
-#include "System.hpp"
 #include "Scene.hpp"
+#include "System.hpp"
+#include "Entity.hpp"
 #include "Component.hpp"
 #include "internal/Keyboard.hpp"
 
-// OpenGL-toolkit
-#include "Model_Obj.hpp"
-#include "Render_Node.hpp"
-#include "Light.hpp"
-#include "Camera.hpp"
-#include "Cube.hpp"
-#include "Model.hpp"
 
 using namespace std;
 
@@ -53,14 +47,7 @@ namespace engine
     // Render de las partes
     class RenderTask : public Task 
     {
-        list<shared_ptr<Model_Component>> components;
-        shared_ptr<glt::Render_Node> renderer;
-
     public:
-        RenderTask(Scene* scene);
-
-        shared_ptr<Component> create_component(const std::string& modelPath);
-
         void execute(float t) override;
     };
 }

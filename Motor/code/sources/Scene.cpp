@@ -5,7 +5,7 @@
 
 namespace engine
 {
-    Scene::Scene() : RenderTask(this) 
+    Scene::Scene() : RenderSystem(this) 
     {
         window = new Window (name, width, height, full);
         kernel.add(input_task);
@@ -17,6 +17,11 @@ namespace engine
     Window& Scene::get_window() 
     {
         return *window;
+    }
+
+    Window& Scene::swap_buffers()
+    {
+
     }
 
     void Scene::run() 

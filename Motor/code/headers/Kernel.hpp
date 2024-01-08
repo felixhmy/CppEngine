@@ -10,11 +10,11 @@ namespace engine
 	class Kernel 
 	{
 
-		std::list<Task*> tasks; // Lista de tareas
+		std::list<Task*> tasks;
 		bool exit;
 
 	public:
-		void add(Task& task); //Añade tareas a la lista
+		void add(Task& task);
 		void run();
 		void stop();
 	};

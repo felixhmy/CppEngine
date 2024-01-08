@@ -13,11 +13,11 @@ namespace engine
 {
     class Entity 
     {
-        std::map<std::string, std::shared_ptr<Component>> components; // Malla de Componentes 
+        std::map<std::string, std::shared_ptr<Component>> components;
         Transform_Component transform;
 
     public:
-        void add(const std::string& id, std::shared_ptr<Component> component); //Añadir a la malla
+        void add(const std::string& id, std::shared_ptr<Component> component);
 
         auto& get_transform();
     };

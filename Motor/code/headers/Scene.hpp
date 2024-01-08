@@ -29,7 +29,7 @@ namespace engine
 
 
 
-        std::map<std::string, std::shared_ptr<Entity>> entities; // Mapa de entidades
+        std::map<std::string, std::shared_ptr<Entity>> entities;
 
         Kernel kernel;
 
@@ -37,12 +37,15 @@ namespace engine
         UpdateTask update_task;
         RenderTask render_task;
 
+        RenderSystem render_system;
+
 
         
 
     public:
         Scene();
         Window& get_window();
+        Window& swap_buffers();
         void run();
 
     private:
