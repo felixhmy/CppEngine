@@ -9,19 +9,18 @@
     </transform>
     
     <model>
-      
       <path>
         assets <!--Ruta del archivo??-->
-      </path>
-      
+      </path> 
     </model>
-    
   </entity>
 
   
   
-  <entity id="number">
-    
+  <entity id="number1">
+    <controller>
+      number-controller
+    </controller>
   </entity>
 
   
