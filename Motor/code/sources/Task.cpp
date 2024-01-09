@@ -38,20 +38,4 @@ namespace engine
             break;
         }
     }
-
-
-    void RenderTask::execute(float t) 
-    {
-        cout << "Rendering" << endl;
-
-        for (auto& component : components) 
-        {
-            glm::mat4 transform_matrix = component->owner->get_transform().get_matrix();
-            component->model->set_transformation(transform_matrix);
-        }
-
-        //renderer->render();
-
-        //scene->get_window()->swap_buffers();
-    }
 }

@@ -22,6 +22,8 @@ namespace engine
 
 	struct Transform_Component : public Component
 	{
+		Transform_Component* parent;
+
 		glm::vec3 position;
 		glm::vec3 rotation;
 		glm::vec3 scale;
@@ -34,14 +36,22 @@ namespace engine
 			matrix = glm::rotate(matrix, glm::radians(rotation.y), glm::vec3(0, 1, 0)); // Y
 			matrix = glm::rotate(matrix, glm::radians(rotation.z), glm::vec3(0, 0, 1)); // Z
 			matrix = glm::scale(matrix, scale);
-			return matrix;
+
+			if (parent)
+			{
+				return parent->get_matrix() * matrix;
+			}
+			else
+			{
+				return matrix;
+			}
+			
 		}
 	};
 
 	struct Model_Component : public Component
 	{
-		shared_ptr < glt::Model > model;
-		
+		shared_ptr < glt::Model > model;	
 	};
 
 	struct Camera_Component : public Component

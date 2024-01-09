@@ -7,7 +7,6 @@
 #include "Entity.hpp"
 
 #include <list>
-#include <map> 
 #include <memory>
 
 #include "Model_Obj.hpp"
@@ -23,19 +22,20 @@ namespace engine
     class System : public Task 
     {
     public:
-        virtual std::shared_ptr<Component> create_component(const Entity& entity, const std::string& component_id) = 0;
+        virtual std::shared_ptr<Component> create_component(Entity& entity, const std::string& component_id) = 0;
     };
 
 
-    class RenderSystem : public System
+    class RenderTask : public System
     {
         
         list<shared_ptr<Component>> components;
         glt::Render_Node renderer;
+        //shared_ptr <glt::Render_Node> renderer;
 
     public:
-        RenderSystem(Scene* scene);
-        shared_ptr<Component> create_component(const Entity & entity, const std::string& component_id) override;
+        RenderTask(Scene* scene);
+        shared_ptr<Component> create_component(Entity & entity, const std::string& component_id) override;
         
 
         void execute(float t) override;

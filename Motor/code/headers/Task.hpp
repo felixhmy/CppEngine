@@ -17,12 +17,14 @@ using namespace std;
 namespace engine 
 {
     // Tarea "padre"
-    class Task {
+    class Task 
+    {
     protected:
         Scene* scene;
 
     public:
-        Task(Scene* scene) : scene(scene) {}
+        Task(Scene* scene) : scene(scene)
+        {}
         virtual void execute(float t) = 0;
     };
 
@@ -39,13 +41,6 @@ namespace engine
 
     // Update del sistema
     class UpdateTask : public Task
-    {
-    public:
-        void execute(float t) override;
-    };
-
-    // Render de las partes
-    class RenderTask : public Task 
     {
     public:
         void execute(float t) override;

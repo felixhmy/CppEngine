@@ -5,16 +5,16 @@
 
 namespace engine
 {
-    Scene::Scene() : RenderSystem(this) 
+    Scene::Scene(Window& window, const std::string& scene_file_path) // : RenderTask(this) 
     {
-        window = new Window (name, width, height, full);
         kernel.add(input_task);
         kernel.add(render_task);
+        kernel.add(update_task);
 
         load_scene();
     }
 
-    Window& Scene::get_window() 
+    Window& Scene::get_window()
     {
         return *window;
     }
@@ -29,7 +29,7 @@ namespace engine
         kernel.run();
     }
 
-    void Scene::load_scene() 
+   void Scene::load_scene()
     {
 
     }

@@ -20,14 +20,7 @@ namespace engine
 {
     class Scene 
     {
-
         Window* window;
-        string name;
-        unsigned width;
-        unsigned height;
-        bool full;
-
-
 
         std::map<std::string, std::shared_ptr<Entity>> entities;
 
@@ -36,14 +29,10 @@ namespace engine
         InputTask input_task;
         UpdateTask update_task;
         RenderTask render_task;
-
-        RenderSystem render_system;
-
-
         
 
     public:
-        Scene();
+        Scene(Window & window, const std::string & scene_file_path);
         Window& get_window();
         Window& swap_buffers();
         void run();

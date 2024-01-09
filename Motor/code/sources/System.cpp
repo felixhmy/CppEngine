@@ -6,23 +6,14 @@ namespace engine
 {
 
 
-    RenderSystem::RenderSystem (Scene * scene) : RenderSystem (scene)
+    RenderTask::RenderTask(Scene * scene) : RenderTask(scene)
     {
-        renderer = make_shared<glt::Render_Node>();
-
-        auto camera = make_shared<glt::Camera>(1, 1, 1, 1);
-        renderer.add("camera", camera);
-        camera->translate(glt::Vector3(0, 0, 0));
-
-
-        auto light = make_shared<glt::Light>();
-        renderer.add("light", light);
-        light->translate(glt::Vector3(0, 0, 1));
     }
 
 
-    shared_ptr <Component> RenderSystem::create_component(const Entity& entity, const std::string& component_id)
+    shared_ptr <Component> RenderTask::create_component(Entity& entity, const std::string& component_id)
     {
+
         shared_ptr <Component> component;
 
         if (component_id == "model")
@@ -40,15 +31,51 @@ namespace engine
             model_component->model = model;
 
             component = model_component;
-            //component->owner = &entity;
+            component->owner = &entity;
 
-            //model->set_postion(glt::Vector3(0, 0, 1));
             //components.push_back(component);
         }
-        else 
+        else if (component_id == "camera")
         {
-            return nullptr;
+            auto camera = make_shared<glt::Camera>(1, 1, 1, 1);
+            renderer.add("camera", camera);
+            camera->translate(glt::Vector3(0, 0, 0));
+        }
+        else if (component_id == "light")
+        {
+            auto light = make_shared<glt::Light>();
+            renderer.add("light", light);
+            light->translate(glt::Vector3(0, 0, 1));
         }
         return component;
+    }
+
+    void RenderTask::execute(float t)
+    {
+        for (auto& component : components)
+        {
+            glm::mat4 transform_matrix = component->owner->get_transform()->get_matrix();
+
+            auto model_component = dynamic_cast <Model_Component*> (component.get());
+            auto camera_component = dynamic_cast <Camera_Component*> (component.get());
+            auto light_component = dynamic_cast <Light_Component*> (component.get());
+
+            if (model_component)
+            {
+                model_component->model->set_transformation(transform_matrix);
+            }
+            else if (camera_component)
+            {
+                camera_component->camera->set_transformation(transform_matrix);
+            }
+            else if (light_component)
+            {
+                light_component->light->set_transformation(transform_matrix);
+            }
+        }
+        renderer.render();
+        
+        scene->get_window();
+        scene->swap_buffers();
     }
 }
