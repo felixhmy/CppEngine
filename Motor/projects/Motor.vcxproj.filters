@@ -90,4 +90,9 @@
       <Filter>Sources\internal</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\binaries\scene-data.xml">
+      <Filter>Resources</Filter>
+    </Xml>
+  </ItemGroup>
 </Project>

@@ -15,6 +15,10 @@
 #include <map>
 #include <memory>
 #include <string>
+#include <fstream>
+
+#include "rapidxml.hpp"
+using namespace rapidxml;
 
 namespace engine
 {
@@ -38,7 +42,9 @@ namespace engine
         void run();
 
     private:
-        void load_scene();
+        void load_scene(const string & scene_file_path);
+        void parse_scene_node(xml_node<>* scene_node);
+        void parse_entity_node(xml_node<>* entity_node, const string& id, Entity & entity);
     };
 }
 

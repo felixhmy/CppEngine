@@ -8,7 +8,7 @@ using namespace std;
 int main() 
 {
 	Window window("Motores Felix Hernandez Muñoz-Yusta", 1024, 768, false);
-	Scene scene(window, "ruta-al-archivo-xml-de-la-escena");
+	Scene scene(window, "..\..\Motor\binaries\scene-data.xml");
 
 	scene.run();
 

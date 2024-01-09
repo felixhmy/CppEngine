@@ -36,6 +36,9 @@
     <ClCompile Include="..\code\sources\System.cpp" />
     <ClCompile Include="..\code\sources\Task.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\binaries\scene-data.xml" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -81,7 +84,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\libraries\glm\headers;..\libraries\windows\sdl2-vs\include;..\libraries\windows\opengl-toolkit\headers;..\code\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\libraries\glm\headers;..\libraries\windows\sdl2-vs\include;..\libraries\windows\opengl-toolkit\headers;..\libraries\rapidxml;..\code\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>

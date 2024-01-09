@@ -1,0 +1,32 @@
+<?xml version = "1.0"?>
+<scene>
+  <entity id="robot">
+    
+    <transform>
+      <x>10</x>
+      <y>5</y>
+      <z>10</z> 
+    </transform>
+    
+    <model>
+      
+      <path>
+        assets <!--Ruta del archivo??-->
+      </path>
+      
+    </model>
+    
+  </entity>
+
+  
+  
+  <entity id="number">
+    
+  </entity>
+
+  
+  
+  <entity id="wall">
+    
+  </entity>
+</scene>

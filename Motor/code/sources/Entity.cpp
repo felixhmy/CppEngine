@@ -4,7 +4,7 @@
 
 namespace engine
 {
-    void Entity::add(const std::string& id, std::shared_ptr<Component> component) 
+    void Entity::add(const std::string& id, std::shared_ptr<Component> component)
     {
         
         components[id] = component;
@@ -16,4 +16,14 @@ namespace engine
         return transform;
     }
 
+    Component* Entity::get_component_by_id(const std::string& id)
+    {
+        auto item = components.find (id);
+
+        if (item != components.end())
+        {
+            return item ->second.get();
+        }
+		return nullptr;
+	}
 }
