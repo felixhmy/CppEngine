@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\code\headers\Component.hpp" />
+    <ClInclude Include="..\code\headers\Controller.hpp" />
     <ClInclude Include="..\code\headers\Entity.hpp" />
     <ClInclude Include="..\code\headers\internal\declarations.hpp" />
     <ClInclude Include="..\code\headers\internal\initialize.hpp" />
@@ -25,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\sources\Component.cpp" />
+    <ClCompile Include="..\code\sources\Controller.cpp" />
     <ClCompile Include="..\code\sources\Entity.cpp" />
     <ClCompile Include="..\code\sources\internal\finalize.cpp" />
     <ClCompile Include="..\code\sources\internal\initialize.cpp" />

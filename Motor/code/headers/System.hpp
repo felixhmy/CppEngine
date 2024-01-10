@@ -24,16 +24,16 @@ namespace engine
     };
 
 
-    class RenderTask : public System
+    class RenderSystem : public System
     {
         
         list<shared_ptr<Component>> components;
         unique_ptr<glt::Render_Node> renderer;
 
     public:
-        RenderTask(Scene* scene);
+        RenderSystem(Scene* scene);
         shared_ptr<Component> create_component(Entity & entity, const std::string& component_id) override;
-        ~RenderTask();
+        ~RenderSystem();
         
 
         void execute(float t) override;

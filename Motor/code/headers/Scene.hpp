@@ -31,13 +31,14 @@ namespace engine
         Kernel kernel;
 
         InputTask input_task;
-        RenderTask render_task;
+        RenderSystem render_system;
         
 
     public:
         Scene(Window & window, const std::string & scene_file_path);
         Window& get_window();
         void run();
+        void stop();
 
     private:
         void load_scene(const string & scene_file_path);

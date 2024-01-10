@@ -20,7 +20,7 @@ namespace engine
 {
 
 
-    RenderTask::RenderTask(Scene * scene) : System (scene)
+    RenderSystem::RenderSystem(Scene * scene) : System (scene)
     {
         renderer = make_unique < Render_Node>();
 
@@ -33,9 +33,9 @@ namespace engine
         light->translate(glt::Vector3(50, 50, 50));
     }
 
-    RenderTask::~RenderTask() {}
+    RenderSystem::~RenderSystem() {}
 
-    shared_ptr <Component> RenderTask::create_component(Entity& entity, const std::string& component_id)
+    shared_ptr <Component> RenderSystem::create_component(Entity& entity, const std::string& component_id)
     {
 
         shared_ptr <Component> component;
@@ -62,7 +62,7 @@ namespace engine
         return component;
     }
 
-    void RenderTask::execute(float t)
+    void RenderSystem::execute(float t)
     {
         for (auto& component : components)
         {

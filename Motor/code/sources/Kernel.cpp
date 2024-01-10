@@ -25,6 +25,7 @@ namespace engine
             }
 
             time = timer.get_elapsed_seconds();
+
         } while (!exit);
     }
 
