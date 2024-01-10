@@ -2,16 +2,14 @@
 
 #include "Scene.hpp"
 
-
-
 namespace engine
 {
-    Scene::Scene(Window& window, const std::string& scene_file_path) // : RenderTask(this) 
+    Scene::Scene(Window& window, const std::string& scene_file_path) : input_task(this), render_task (this), window (&window)
     {
         kernel.add(input_task);
         kernel.add(render_task);
 
-        load_scene(scene_file_path);
+        //load_scene(scene_file_path);
     }
 
     Window& Scene::get_window()
@@ -32,11 +30,12 @@ namespace engine
         reader.seekg(0, ifstream::end);
         size_t size = reader.tellg();
         reader.seekg(0, ifstream::beg);
-        string xml_data(size);
+        string xml_data;
+        xml_data.resize(size);
         reader.read(&xml_data.front(), size);
 
         xml_document <> xml_dom;
-        xml_dom.parse<0>(xml_data.c_str());
+        xml_dom.parse<0>(const_cast<char*>(xml_data.c_str()));
         xml_node<>* scene_node = xml_dom.first_node("scene");
         if (string(scene_node->name()) == "scene")
         {
@@ -89,20 +88,19 @@ namespace engine
 
     void Scene::parse_transform(xml_node<>* transform_node, Entity& entity)
     {
-        // O DENTRO DE UNA MATRIX???
         glm::vec3 position(0.0f), rotation(0.0f), scale(1.0f);
 
         for (auto child = transform_node->first_node(); child; child = child->next_sibling())
         {
             string name = child->name();
-            float value = atof(child->value());
+            float value = float (atof(child->value()));
 
             if (name == "x") position.x = value;
             else if (name == "y") position.y = value;
             else if (name == "z") position.z = value;
             
         }
-        entity.set_position(position);
+        entity.get_transform().position = position;
     }
 
 }

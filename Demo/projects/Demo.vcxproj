@@ -86,6 +86,9 @@
   <ItemGroup>
     <ClCompile Include="..\code\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\binaries\scene-data.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

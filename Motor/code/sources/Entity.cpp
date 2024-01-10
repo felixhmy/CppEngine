@@ -11,11 +11,6 @@ namespace engine
         component->owner = this;
     }
 
-    auto& Entity::get_transform() 
-    {
-        return transform;
-    }
-
     Component* Entity::get_component_by_id(const std::string& id)
     {
         auto item = components.find (id);

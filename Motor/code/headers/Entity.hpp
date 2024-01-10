@@ -6,7 +6,6 @@
 #include <string>
 #include <memory>
 
-#include "Task.hpp"
 #include "Component.hpp"
 
 namespace engine
@@ -23,7 +22,10 @@ namespace engine
     public:
         void add(const std::string& id, std::shared_ptr<Component> component);
 
-        auto& get_transform();
+        auto& get_transform()
+        {
+            return transform;
+        }
 
         Component* get_component_by_id(const std::string& id);
     };

@@ -5,19 +5,19 @@
 #include <iostream>
 #include <memory>
 #include <list>
-#include <SDL.h>
 
-#include "Scene.hpp"
-#include "System.hpp"
-#include "Entity.hpp"
-#include "Component.hpp"
-#include "internal/Keyboard.hpp"
+//#include "Scene.hpp"
+//#include "System.hpp"
+//#include "Entity.hpp"
+//#include "Component.hpp"
+//#include "internal/Keyboard.hpp"
 
 
 using namespace std;
 
 namespace engine 
 {
+    class Scene;
     // Tarea "padre"
     class Task 
     {
@@ -38,6 +38,6 @@ namespace engine
         void execute(float t) override;
 
     private:
-        void KeyPress(SDL_Keycode key);
+       // void KeyPress(SDL_Keycode key);
     };
 }

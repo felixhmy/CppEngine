@@ -36,9 +36,6 @@
     <ClCompile Include="..\code\sources\System.cpp" />
     <ClCompile Include="..\code\sources\Task.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <Xml Include="..\binaries\scene-data.xml" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -84,7 +81,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\libraries\glm\headers;..\libraries\windows\sdl2-vs\include;..\libraries\windows\opengl-toolkit\headers;..\libraries\rapidxml;..\code\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\libraries\windows\sdl2-vs\include;..\libraries\windows\opengl-toolkit\headers;..\libraries\windows\sdl2-mixer-vs\include;..\libraries\rapidxml;..\code\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -93,7 +90,7 @@
     </Link>
     <Lib>
       <AdditionalLibraryDirectories>..\libraries\windows\sdl2-vs\lib\x64;..\libraries\windows\opengl-toolkit\lib\x64;..\libraries\windows\sdl2-mixer-vs\lib\static\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2d.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2d.lib;opengl-toolkit-debug.lib;SDL2-mixer-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>

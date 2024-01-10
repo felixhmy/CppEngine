@@ -1,6 +1,7 @@
 // Realizado por: Félix Hernández Muñoz - Yusta
 
 #include "Task.hpp"
+#include <SDL.h>
 
 namespace engine 
 {
@@ -15,11 +16,12 @@ namespace engine
         {
             if (event.type == SDL_KEYDOWN) 
             {
-                KeyPress(event.key.keysym.sym);
+                //KeyPress(event.key.keysym.sym);
             }
         }
     }
 
+    /*
     void InputTask::KeyPress(SDL_Keycode key) 
     {
         switch (key) 
@@ -38,4 +40,5 @@ namespace engine
             break;
         }
     }
+    */
 }

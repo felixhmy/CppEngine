@@ -2,23 +2,30 @@
 
 #pragma once
 
-#include "Entity.hpp"
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-#include "Model.hpp"
-#include "Camera.hpp"
-#include "Light.hpp"
+
+#include "rapidxml/rapidxml.hpp"
+#include <glm/glm.hpp>
+
+#include "System.hpp"
+
 #include <memory>
 #include <list>
 #include <map>
 #include <string>
 
 using namespace std;
+using namespace rapidxml;
+
+namespace glt { class Model; }
 
 namespace engine
 {
-    struct Component
+    class Entity;
+    class Scene;
+
+    class Component
     {
+    public:
         Entity* owner;
         virtual ~Component() = default;
     };
@@ -37,14 +44,11 @@ namespace engine
         shared_ptr<glt::Model> model;
     };
 
-    struct Camera_Component : public Component
-    {
-        shared_ptr<glt::Camera> camera;
-    };
 
-    struct Light_Component : public Component
+    class Controller
     {
-        shared_ptr<glt::Light> light;
+    public:
+        virtual void update(Entity& entity, float t) = 0;
     };
 
     typedef shared_ptr<Controller>(*Controller_Factory)();
@@ -54,11 +58,7 @@ namespace engine
         Controller* controller;
     };
 
-    class Controller
-    {
-    public:
-        virtual void update(Entity& entity, float t) = 0;
-    };
+    
 
     class Control_System : public System
     {
@@ -66,7 +66,7 @@ namespace engine
         map<string, Controller_Factory> controller_factories;
 
     public:
-        Control_System(const map<string, Controller_Factory>& given_control_factories);
+        Control_System(const map<string, Controller_Factory>& given_control_factories, Scene *scene);
         shared_ptr<Component> create_component(Entity& entity, const std::string& component_id, const xml_node<>* data);
         void execute(float t) override;
     };

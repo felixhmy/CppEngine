@@ -17,7 +17,7 @@
 #include <string>
 #include <fstream>
 
-#include "rapidxml.hpp"
+#include "rapidxml/rapidxml.hpp"
 using namespace rapidxml;
 
 namespace engine

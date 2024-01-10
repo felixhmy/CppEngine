@@ -23,7 +23,10 @@
 
   
   
-  <entity id="wall">
-    
+  <entity id="wall1">
+    <model>
+      <box> ancho, alto, profundo </box>
+    </model>
+
   </entity>
 </scene>
