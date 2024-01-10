@@ -67,7 +67,7 @@ namespace engine
 
     public:
         Control_System(const map<string, Controller_Factory>& given_control_factories);
-        shared_ptr<Component> create_component(Entity& entity, const std::string& component_id, const xml_node<>* data) override;
+        shared_ptr<Component> create_component(Entity& entity, const std::string& component_id, const xml_node<>* data);
         void execute(float t) override;
     };
 }

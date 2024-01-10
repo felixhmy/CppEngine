@@ -75,7 +75,7 @@ namespace engine
         }
         renderer.render();
         
-        scene->get_window();
-        scene->swap_buffers();
+        Window& window = scene->get_window();
+        window.swap_buffers();
     }
 }

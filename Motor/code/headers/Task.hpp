@@ -38,11 +38,4 @@ namespace engine
     private:
         void KeyPress(SDL_Keycode key);
     };
-
-    // Update del sistema
-    class UpdateTask : public Task
-    {
-    public:
-        void execute(float t) override;
-    };
 }

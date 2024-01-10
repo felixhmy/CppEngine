@@ -10,7 +10,6 @@ namespace engine
     {
         kernel.add(input_task);
         kernel.add(render_task);
-        kernel.add(update_task);
 
         load_scene(scene_file_path);
     }
@@ -20,12 +19,7 @@ namespace engine
         return *window;
     }
 
-    Window& Scene::swap_buffers()
-    {
-
-    }
-
-    void Scene::run() 
+    void Scene::run()
     {
         kernel.run();
     }
@@ -43,8 +37,8 @@ namespace engine
 
         xml_document <> xml_dom;
         xml_dom.parse<0>(xml_data.c_str());
-        xml_node<> * scene_node = xml_dom.first_node("scene");
-        if (string(scene_node->name() == "scene"))
+        xml_node<>* scene_node = xml_dom.first_node("scene");
+        if (string(scene_node->name()) == "scene")
         {
             parse_scene_node(scene_node);
         }
@@ -66,11 +60,11 @@ namespace engine
                 }
 
                 parse_entity_node(child, id, *entity);
-			}
+            }
         }
     }
 
-    void Scene::parse_entity_node(xml_node<>* entity_node,const string & id, Entity & entity)
+    void Scene::parse_entity_node(xml_node<>* entity_node, const string& id, Entity& entity)
     {
         for (auto child = entity_node->first_node(); child != nullptr; child = child->next_sibling())
         {
@@ -79,19 +73,36 @@ namespace engine
             if (name == "transform")
             {
                 // CREAR PARSE_TRANSFORM PARA OBTENER A LA VEZ LA X,Y,Z
-                entity->set_transform (parse_transform(child));
+                //entity->set_transform(parse_transform(child));
+                parse_transform(child, entity);
             }
             else if (name == "model")
             {
-               // auto component = render_task.create_component(entity, id, child);
+                // auto component = render_task.create_component(entity, id, child);
                 auto component = render_task.create_component(entity, "model");
 
-                entity.add ("model", component);
+                entity.add("model", component);
             }
             // Faltan crear el resto de componentes (camera, light, etc)
         }
+    }
+
+    void Scene::parse_transform(xml_node<>* transform_node, Entity& entity)
+    {
+        // O DENTRO DE UNA MATRIX???
+        glm::vec3 position(0.0f), rotation(0.0f), scale(1.0f);
+
+        for (auto child = transform_node->first_node(); child; child = child->next_sibling())
+        {
+            string name = child->name();
+            float value = atof(child->value());
+
+            if (name == "x") position.x = value;
+            else if (name == "y") position.y = value;
+            else if (name == "z") position.z = value;
+            
+        }
+        entity.set_position(position);
+    }
+
 }
-
-
-
-

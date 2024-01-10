@@ -23,8 +23,7 @@ namespace engine
         }
     }
 
-    Control_System::Control_System(const map<string, Controller_Factory>& given_control_factories)
-        : controller_factories(given_control_factories)
+    Control_System::Control_System(const map<string, Controller_Factory>& given_control_factories): controller_factories(given_control_factories)
     {
 
     }

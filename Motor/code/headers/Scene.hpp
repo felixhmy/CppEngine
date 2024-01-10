@@ -31,20 +31,20 @@ namespace engine
         Kernel kernel;
 
         InputTask input_task;
-        UpdateTask update_task;
         RenderTask render_task;
         
 
     public:
         Scene(Window & window, const std::string & scene_file_path);
         Window& get_window();
-        Window& swap_buffers();
         void run();
 
     private:
         void load_scene(const string & scene_file_path);
+
         void parse_scene_node(xml_node<>* scene_node);
         void parse_entity_node(xml_node<>* entity_node, const string& id, Entity & entity);
+        void parse_transform(xml_node<>* transform_node, Entity& entity);
     };
 }
 

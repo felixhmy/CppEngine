@@ -9,9 +9,7 @@
     </transform>
     
     <model>
-      <path>
-        assets <!--Ruta del archivo??-->
-      </path> 
+      <path>binaries/Robot.obj</path> 
     </model>
   </entity>
 
