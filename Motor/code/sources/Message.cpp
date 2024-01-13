@@ -4,8 +4,6 @@
 
 namespace engine
 {
-    // Implementación de Message_Dispatcher
-
     void Message_Dispatcher::add(Message_Listener& listener, const std::string& message_id)
     {
         message_listeners[message_id].push_back(&listener);
@@ -16,7 +14,7 @@ namespace engine
         messages.push_back(message);
     }
 
-    void Message_Dispatcher::execute()
+    void Message_Dispatcher::execute(float t)
     {
         for (auto& message : messages)
         {
@@ -26,6 +24,6 @@ namespace engine
                 listener->handle(message);
             }
         }
-        messages.clear(); // Limpiar la lista de mensajes después de procesarlos
+        messages.clear();
     }
 }
