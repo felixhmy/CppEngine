@@ -19,6 +19,7 @@
     <ClInclude Include="..\code\headers\internal\Keyboard.hpp" />
     <ClInclude Include="..\code\headers\internal\Window.hpp" />
     <ClInclude Include="..\code\headers\Kernel.hpp" />
+    <ClInclude Include="..\code\headers\Message.hpp" />
     <ClInclude Include="..\code\headers\Scene.hpp" />
     <ClInclude Include="..\code\headers\System.hpp" />
     <ClInclude Include="..\code\headers\Task.hpp" />
@@ -34,6 +35,7 @@
     <ClCompile Include="..\code\sources\internal\Window.cpp" />
     <ClCompile Include="..\code\sources\internal\winmain.cpp" />
     <ClCompile Include="..\code\sources\Kernel.cpp" />
+    <ClCompile Include="..\code\sources\Message.cpp" />
     <ClCompile Include="..\code\sources\Scene.cpp" />
     <ClCompile Include="..\code\sources\System.cpp" />
     <ClCompile Include="..\code\sources\Task.cpp" />

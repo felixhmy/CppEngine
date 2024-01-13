@@ -28,9 +28,11 @@ namespace engine
 
     void Control_System::execute(float t)
     {
+      /*
         for (auto& component : components)
         {
             component->controller->update(*component->owner, t);
         }
+      */
     }
 }

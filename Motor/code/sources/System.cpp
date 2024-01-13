@@ -22,6 +22,8 @@ namespace engine
 
     RenderSystem::RenderSystem(Scene * scene) : System (scene)
     {
+        next_entity_id = 0;
+
         renderer = make_unique < Render_Node>();
 
         auto camera = make_shared<glt::Camera>(10, 0.1f, 1000.f, 1.333f);
@@ -42,9 +44,8 @@ namespace engine
 
         if (component_id == "model")
         {
-            std::string model_path = "../../Demo/binaries/Robot.obj";
-            // ASIGNARLE EL ID DE LA ENTIDAD QUE SE SACA DEL XML Y QUE DEBERIA RECIBIR ESTA FUNCIÓN POR PARAMETRO (entity_id)
-            std::string entity_id = "entity_id-cambiar";
+            model_path = "../../Demo/binaries/Robot.obj";
+            entity_id = "model" + std::to_string(next_entity_id++);
 
             auto model = make_shared <glt::Model_Obj>(model_path);
 
@@ -57,7 +58,7 @@ namespace engine
             component = model_component;
             component->owner = &entity;
 
-            //components.push_back(component);
+            components.push_back(component);
         }
         return component;
     }

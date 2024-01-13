@@ -6,7 +6,6 @@ namespace engine
 {
     void Entity::add(const std::string& id, std::shared_ptr<Component> component)
     {
-        
         components[id] = component;
         component->owner = this;
     }

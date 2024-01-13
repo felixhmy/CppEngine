@@ -6,10 +6,8 @@
 #include "Component.hpp"
 #include "Entity.hpp"
 #include "Kernel.hpp"
-#include "Scene.hpp"
 #include "System.hpp"
 #include "Task.hpp"
-#include "Timer.hpp"
 
 
 #include <map>
@@ -41,11 +39,12 @@ namespace engine
         void stop();
 
     private:
-        void load_scene(const string & scene_file_path);
-
-        void parse_scene_node(xml_node<>* scene_node);
-        void parse_entity_node(xml_node<>* entity_node, const string& id, Entity & entity);
-        void parse_transform(xml_node<>* transform_node, Entity& entity);
+        void load_scene();
+        
+        // void load_scene_xml(const string& scene_file_path);
+        // void parse_scene_node(xml_node<>* scene_node);
+        // void parse_entity_node(xml_node<>* entity_node, const string& id, Entity & entity);
+        // void parse_transform(xml_node<>* transform_node, Entity& entity);
     };
 }
 

@@ -1,9 +1,7 @@
 // Realizado por: Félix Hernández Muñoz - Yusta
 
 #pragma once
-
-
-#include "rapidxml/rapidxml.hpp"
+ 
 #include <glm/glm.hpp>
 
 #include "System.hpp"

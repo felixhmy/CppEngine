@@ -9,7 +9,7 @@ namespace engine
 		kernel.add(input_task);
 		kernel.add(render_system);
 
-		//load_scene(scene_file_path);
+		load_scene();
 	}
 
 	Window& Scene::get_window()
@@ -28,7 +28,37 @@ namespace engine
 	}
 
 
-	void Scene::load_scene(const string& scene_file_path)
+	void Scene::load_scene()
+	{
+		// cargar entity
+		auto entity = std::make_shared<Entity>();
+
+		entities[render_system.entity_id] = entity;
+		
+
+		//transform
+		entity->get_transform();
+
+		//component
+		auto component = render_system.create_component(*entity, "model");
+		entity->add("model", component);
+	}
+	
+	/*
+		- Crear load_scene añadiendo los objetos manualmente (entidades y componentes)
+		- Agregarle a la entidad el componente
+		- Guardar esa entidad en el mapa de la escena
+	*/
+	
+
+}
+
+
+
+
+
+/*
+	void Scene::load_scene_xml (const string& scene_file_path)
 	{
 		std::ifstream reader(scene_file_path, ifstream::binary);
 		reader.seekg(0, ifstream::end);
@@ -106,5 +136,4 @@ namespace engine
 		}
 		entity.get_transform().position = position;
 	}
-
-}
+*/

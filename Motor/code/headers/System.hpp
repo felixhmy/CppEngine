@@ -29,8 +29,13 @@ namespace engine
         
         list<shared_ptr<Component>> components;
         unique_ptr<glt::Render_Node> renderer;
-
+        
     public:
+
+        int next_entity_id;
+        std::string model_path;
+        std::string entity_id;
+
         RenderSystem(Scene* scene);
         shared_ptr<Component> create_component(Entity & entity, const std::string& component_id) override;
         ~RenderSystem();

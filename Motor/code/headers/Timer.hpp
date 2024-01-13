@@ -1,5 +1,7 @@
 // Realizado por: Félix Hernández Muñoz-Yusta
 
+#pragma once
+
 #include <chrono>
 
 namespace engine

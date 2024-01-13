@@ -16,8 +16,6 @@ namespace engine
 
         Transform_Component transform;
 
-        
-
 
     public:
         void add(const std::string& id, std::shared_ptr<Component> component);

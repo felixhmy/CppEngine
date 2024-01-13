@@ -57,6 +57,9 @@
     <ClInclude Include="..\code\headers\Controller.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="..\code\headers\Message.hpp">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\sources\Component.cpp">
@@ -93,6 +96,9 @@
       <Filter>Sources\internal</Filter>
     </ClCompile>
     <ClCompile Include="..\code\sources\Controller.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\code\sources\Message.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>

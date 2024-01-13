@@ -9,7 +9,6 @@ namespace engine
 {
 	class Kernel 
 	{
-
 		std::list<Task*> tasks;
 		bool exit;
 

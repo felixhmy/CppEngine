@@ -4,7 +4,6 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 
-
 namespace engine
 {
     glm::mat4 Transform_Component::get_matrix() const
