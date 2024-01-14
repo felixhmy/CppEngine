@@ -25,7 +25,7 @@ namespace engine
     {
     public:
         Entity* owner; // Puntero al propietario de este componente.
-        virtual ~Component() = default; // Destructor
+        virtual ~Component() = default;
     };
 
     // Tipo específico de Component que almacena información de transformación (posición, rotación y escala).
@@ -41,6 +41,6 @@ namespace engine
     // Tipo específico de Component que almacena un modelo 3D mediante openGL-toolkit.
     struct Model_Component : public Component
     {
-        shared_ptr<glt::Model> model; // Puntero al modelo 3D.
+        shared_ptr<glt::Model> model;
     };
 }

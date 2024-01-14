@@ -6,7 +6,7 @@
 #include <memory>
 #include <list>
 
-#include <SDL.h>
+//#include <SDL.h>
 
 using namespace std;
 
@@ -32,6 +32,6 @@ namespace engine
         void execute(float t) override;
 
     private:
-       void KeyPress(SDL_Keycode key);
+       //void KeyPress(SDL_Keycode key);
     };
 }

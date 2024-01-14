@@ -71,7 +71,7 @@ namespace engine
 		}
 	}
 
-	// Parsea el nodo de la escena.
+	// Parsea el nodo de la escena desde XML.
 	void Scene::parse_scene_node(xml_node<>* scene_node)
 	{
 		for (auto child = scene_node->first_node(); child != nullptr; child = child->next_sibling())
@@ -92,7 +92,7 @@ namespace engine
 		}
 	}
 
-	// Parsea el nodo de la entidad.
+	// Parsea el nodo de la entidad desde el XML.
 	void Scene::parse_entity_node(xml_node<>* entity_node, const string& id, Entity& entity)
 	{
 		for (auto child = entity_node->first_node(); child != nullptr; child = child->next_sibling())
@@ -101,22 +101,20 @@ namespace engine
 
 			if (name == "transform")
 			{
-				// PENDIENTE CREAR PARSE_TRANSFORM PARA OBTENER A LA VEZ LA X,Y,Z
+				/// PENDIENTE CREAR SET_TRANSFORM EN ENTITY
 				//entity->set_transform(parse_transform(child));
 				parse_transform(child, entity);
 			}
 			else if (name == "model")
 			{
-				// auto component = render_system.create_component(entity, id, child);
 				auto component = render_system.create_component(entity, "model");
-
 				entity.add("model", component);
 			}
 			// FALTAN CREAR LOS DEMAS COMPONENTES (CAMERA, LIGHT, ETC).
 		}
 	}
 
-	// Parsea el transform de la entidad.
+	// Parsea el transform de la entidad desde el XML.
 	void Scene::parse_transform(xml_node<>* transform_node, Entity& entity)
 	{
 		glm::vec3 position(0.0f), rotation(0.0f), scale(1.0f);

@@ -26,7 +26,7 @@ namespace engine
         // Camara
         auto camera = make_shared<glt::Camera>(10, 0.1f, 1000.f, 1.333f);
         renderer->add("camera", camera);
-        camera->translate(glt::Vector3(0, 0, 0));
+        camera->translate(glt::Vector3(10, 10, 0));
         // Luz
         auto light = make_shared<glt::Light>();
         renderer->add("light", light);
@@ -46,6 +46,7 @@ namespace engine
             model_path = "../../Demo/binaries/Robot.obj";
             entity_id = "model" + std::to_string(next_entity_id++);
 
+            /// DA ERROR AL CARGAR EL MODELO
             auto model = make_shared <glt::Model_Obj>(model_path);
 
             renderer->add(entity_id, model);

@@ -7,10 +7,9 @@
 
 namespace engine
 {
-    // Constructor de Control_System: inicializa el sistema y almacena las fábricas de controladores.
     Control_System::Control_System(const map<string, Controller_Factory>& given_control_factories, Scene * scene): System (scene), controller_factories(given_control_factories)
     {
-        // Pendiente de implementar
+
     }
 
     // Crea un componente de control a partir de un XML.
@@ -27,7 +26,7 @@ namespace engine
         return component;
     }
 
-    // Ejecuta la lógica de actualización para cada componente de control.
+    // Actualiza la lógica para cada componente con un controller.
     void Control_System::execute(float t)
     {
         for (auto& component : components)

@@ -3,16 +3,15 @@
 #include "Task.hpp"
 #include "internal/Keyboard.hpp"
 
-
-
 namespace engine 
 {
+    // EL CODIGO FUNCIONA CORRECTAMENTE PERO EL PROYECTO NO COMPILA PORQUE NO ENCUENTRA LA LIBRERIA SDL
     InputTask::InputTask(Scene* scene) : Task(scene) {}
 
     // Ejecuta la tarea de input del usuario.
     void InputTask::execute(float t) 
     {
-        
+/*
         SDL_Event event;
 
         while (SDL_PollEvent(&event)) 
@@ -22,9 +21,11 @@ namespace engine
                 KeyPress(event.key.keysym.sym);
             }
         }
+*/
     }
 
     // Detecta la tecla pulsada y realiza la acción correspondiente.
+/*
     void InputTask::KeyPress(SDL_Keycode key) 
     {
         switch (key) 
@@ -43,5 +44,6 @@ namespace engine
             break;
         }
     }
+*/
     
 }

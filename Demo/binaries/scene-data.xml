@@ -1,16 +1,18 @@
 <?xml version = "1.0"?>
 <scene>
+  
   <entity id="robot">
-    
     <transform>
       <x>10</x>
       <y>5</y>
       <z>10</z> 
     </transform>
-    
     <model>
       <path>binaries/Robot.obj</path> 
     </model>
+    <controller>
+      RobotController
+    </controller>
   </entity>
 
   

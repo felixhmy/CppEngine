@@ -33,7 +33,7 @@ namespace engine
     {
     private:
         std::list<Message> messages; // Lista de mensajes.
-        std::map<std::string, std::list<Message_Listener*>> message_listeners; // Lista de listeners de mensajes.
+        std::map<std::string, std::list<Message_Listener*>> message_listeners; // Lista de listeners.
 
     public:
         void add(Message_Listener& listener, const std::string& message_id);

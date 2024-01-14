@@ -31,16 +31,16 @@ namespace engine
         virtual void update(Entity& entity, float t) = 0;
     };
 
-    // Función para fábricas de controladores, usadas para crear controladores.
+    // Función para fábricas de controladores.
     typedef shared_ptr<Controller>(*Controller_Factory)();
 
-    // Almacena un puntero a un controlador, se añade a una entidad para controlarlo.
+    // Almacena un puntero de un controlador, se añade a una entidad para controlarla.
     struct Control_Component : public Component
     {
         Controller* controller;
     };
 
-    // Es un sistema que gestiona la creación y ejecución de estos componentes.
+    // Es un sistema que se encarga la creación y ejecución de estos componentes.
     class Control_System : public System
     {
         list<shared_ptr<Control_Component>> components;

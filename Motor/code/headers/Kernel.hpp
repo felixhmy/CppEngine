@@ -7,7 +7,7 @@
 
 namespace engine
 {
-	//Actúa como un gestor de tareas en el motor.
+	//Actúa como gestor de tareas en el motor.
 	class Kernel 
 	{
 		std::list<Task*> tasks;
