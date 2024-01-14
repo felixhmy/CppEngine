@@ -23,11 +23,11 @@ namespace engine
         next_entity_id = 0;
 
         renderer = make_unique < Render_Node>();
-
+        // Camara
         auto camera = make_shared<glt::Camera>(10, 0.1f, 1000.f, 1.333f);
         renderer->add("camera", camera);
         camera->translate(glt::Vector3(0, 0, 0));
-
+        // Luz
         auto light = make_shared<glt::Light>();
         renderer->add("light", light);
         light->translate(glt::Vector3(50, 50, 50));
@@ -35,6 +35,7 @@ namespace engine
 
     RenderSystem::~RenderSystem() {}
 
+    // Carga un modelo para una entidad específica.
     shared_ptr <Component> RenderSystem::create_component(Entity& entity, const std::string& component_id)
     {
 
@@ -42,7 +43,6 @@ namespace engine
 
         if (component_id == "model")
         {
-            //Cannot open file
             model_path = "../../Demo/binaries/Robot.obj";
             entity_id = "model" + std::to_string(next_entity_id++);
 
@@ -62,6 +62,7 @@ namespace engine
         return component;
     }
 
+    // Ejecuta el sistema de renderizado.
     void RenderSystem::execute(float t)
     {
         for (auto& component : components)
@@ -76,6 +77,7 @@ namespace engine
                 model_component->model->set_transformation(transform_matrix);
             }
         }
+
         scene->get_window().clear();
 
         renderer->render();

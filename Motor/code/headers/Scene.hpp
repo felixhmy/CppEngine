@@ -20,6 +20,7 @@ using namespace rapidxml;
 
 namespace engine
 {
+    // Agrupa todos los elementos que van a utilizarse.
     class Scene 
     {
         Window* window;
@@ -33,6 +34,7 @@ namespace engine
         
 
     public:
+
         Scene(Window & window, const std::string & scene_file_path);
         Window& get_window();
         void run();
@@ -41,10 +43,11 @@ namespace engine
     private:
         void load_scene();
         
-        // void load_scene_xml(const string& scene_file_path);
-        // void parse_scene_node(xml_node<>* scene_node);
-        // void parse_entity_node(xml_node<>* entity_node, const string& id, Entity & entity);
-        // void parse_transform(xml_node<>* transform_node, Entity& entity);
+        // Carga la escena desde un archivo XML.
+        void load_scene_xml(const string& scene_file_path);
+        void parse_scene_node(xml_node<>* scene_node);
+        void parse_entity_node(xml_node<>* entity_node, const string& id, Entity & entity);
+        void parse_transform(xml_node<>* transform_node, Entity& entity);
     };
 }
 

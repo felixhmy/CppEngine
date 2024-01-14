@@ -6,6 +6,7 @@
 
 namespace engine
 {
+    // Se encarga de gestionar el tiempo dentro del motor.
     class Timer
     {
     private:
@@ -17,11 +18,13 @@ namespace engine
             start = std::chrono::high_resolution_clock::now();
         }
 
+        // Reinicia el tiempo.
         void reset()
         {
             start = std::chrono::high_resolution_clock::now();
         }
 
+        // Devuelve el tiempo transcurrido desde el inicio.
         float get_elapsed_seconds() const
         {
             auto end = std::chrono::high_resolution_clock::now();

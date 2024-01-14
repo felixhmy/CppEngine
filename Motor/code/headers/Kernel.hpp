@@ -7,6 +7,7 @@
 
 namespace engine
 {
+	//Actúa como un gestor de tareas en el motor.
 	class Kernel 
 	{
 		std::list<Task*> tasks;
@@ -18,8 +19,3 @@ namespace engine
 		void stop();
 	};
 }
-
-
-
-
-

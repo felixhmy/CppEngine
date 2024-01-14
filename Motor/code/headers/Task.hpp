@@ -6,27 +6,21 @@
 #include <memory>
 #include <list>
 
-//#include "Scene.hpp"
-//#include "System.hpp"
-//#include "Entity.hpp"
-//#include "Component.hpp"
-//#include "internal/Keyboard.hpp"
-
+#include <SDL.h>
 
 using namespace std;
 
 namespace engine 
 {
     class Scene;
-    // Tarea "padre"
+    // Tarea "padre" de la que heredan el resto de tareas.
     class Task 
     {
     protected:
         Scene* scene;
 
     public:
-        Task(Scene* scene) : scene(scene)
-        {}
+        Task(Scene* scene) : scene(scene) {}
         virtual void execute(float t) = 0;
     };
 
@@ -38,6 +32,6 @@ namespace engine
         void execute(float t) override;
 
     private:
-       // void KeyPress(SDL_Keycode key);
+       void KeyPress(SDL_Keycode key);
     };
 }

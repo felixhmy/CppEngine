@@ -1,12 +1,15 @@
 // Realizado por: Félix Hernández Muñoz - Yusta
 
 #include "Task.hpp"
-#include <SDL.h>
+#include "internal/Keyboard.hpp"
+
+
 
 namespace engine 
 {
     InputTask::InputTask(Scene* scene) : Task(scene) {}
 
+    // Ejecuta la tarea de input del usuario.
     void InputTask::execute(float t) 
     {
         
@@ -16,12 +19,12 @@ namespace engine
         {
             if (event.type == SDL_KEYDOWN) 
             {
-                //KeyPress(event.key.keysym.sym);
+                KeyPress(event.key.keysym.sym);
             }
         }
     }
 
-    /*
+    // Detecta la tecla pulsada y realiza la acción correspondiente.
     void InputTask::KeyPress(SDL_Keycode key) 
     {
         switch (key) 
@@ -40,5 +43,5 @@ namespace engine
             break;
         }
     }
-    */
+    
 }

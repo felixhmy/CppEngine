@@ -6,6 +6,7 @@
 
 namespace engine
 {
+    // Esta función crea una matriz de 4x4 a partir de los componentes de posición, rotación y escala.
     glm::mat4 Transform_Component::get_matrix() const
     {
         glm::mat4 matrix(1);

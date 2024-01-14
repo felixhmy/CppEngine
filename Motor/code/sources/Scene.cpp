@@ -4,6 +4,7 @@
 
 namespace engine
 {
+	// Constructor de la escena, se encarga de cargar las tareas del kernel y de cargar la escena.
 	Scene::Scene(Window& window, const std::string& scene_file_path) : input_task(this), render_system (this), window (&window)
 	{
 		kernel.add(input_task);
@@ -17,17 +18,18 @@ namespace engine
 		return *window;
 	}
 
+	// Se encarga de ejecutar el kernel.
 	void Scene::run()
 	{
 		kernel.run();
 	}
-
+	// Se encarga de parar el kernel.
 	void Scene::stop()
 	{
 		kernel.stop();
 	}
 
-
+	// Se encarga de cargar la escena.
 	void Scene::load_scene()
 	{
 		// cargar entity
@@ -44,13 +46,13 @@ namespace engine
 		entity->add("model", component);
 	}
 
-}
 
 
 
 
-/*
-	void Scene::load_scene_xml (const string& scene_file_path)
+
+	// Carga la escena a partir de un archivo XML.
+	void Scene::load_scene_xml(const string& scene_file_path)
 	{
 		std::ifstream reader(scene_file_path, ifstream::binary);
 		reader.seekg(0, ifstream::end);
@@ -69,6 +71,7 @@ namespace engine
 		}
 	}
 
+	// Parsea el nodo de la escena.
 	void Scene::parse_scene_node(xml_node<>* scene_node)
 	{
 		for (auto child = scene_node->first_node(); child != nullptr; child = child->next_sibling())
@@ -89,6 +92,7 @@ namespace engine
 		}
 	}
 
+	// Parsea el nodo de la entidad.
 	void Scene::parse_entity_node(xml_node<>* entity_node, const string& id, Entity& entity)
 	{
 		for (auto child = entity_node->first_node(); child != nullptr; child = child->next_sibling())
@@ -97,7 +101,7 @@ namespace engine
 
 			if (name == "transform")
 			{
-				// CREAR PARSE_TRANSFORM PARA OBTENER A LA VEZ LA X,Y,Z
+				// PENDIENTE CREAR PARSE_TRANSFORM PARA OBTENER A LA VEZ LA X,Y,Z
 				//entity->set_transform(parse_transform(child));
 				parse_transform(child, entity);
 			}
@@ -108,10 +112,11 @@ namespace engine
 
 				entity.add("model", component);
 			}
-			// Faltan crear el resto de componentes (camera, light, etc)
+			// FALTAN CREAR LOS DEMAS COMPONENTES (CAMERA, LIGHT, ETC).
 		}
 	}
 
+	// Parsea el transform de la entidad.
 	void Scene::parse_transform(xml_node<>* transform_node, Entity& entity)
 	{
 		glm::vec3 position(0.0f), rotation(0.0f), scale(1.0f);
@@ -119,13 +124,13 @@ namespace engine
 		for (auto child = transform_node->first_node(); child; child = child->next_sibling())
 		{
 			string name = child->name();
-			float value = float (atof(child->value()));
+			float value = float(atof(child->value()));
 
 			if (name == "x") position.x = value;
 			else if (name == "y") position.y = value;
 			else if (name == "z") position.z = value;
-			
+
 		}
 		entity.get_transform().position = position;
 	}
-*/
+}
