@@ -43,16 +43,8 @@ namespace engine
 		auto component = render_system.create_component(*entity, "model");
 		entity->add("model", component);
 	}
-	
-	/*
-		- Crear load_scene añadiendo los objetos manualmente (entidades y componentes)
-		- Agregarle a la entidad el componente
-		- Guardar esa entidad en el mapa de la escena
-	*/
-	
 
 }
-
 
 
 

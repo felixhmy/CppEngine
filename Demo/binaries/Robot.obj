@@ -1,7 +1,4 @@
-# Blender 4.0.2
-# www.blender.org
-mtllib Robot.mtl
-o Sphere
+o Robot
 v -0.371828 2.143328 -0.245018
 v -0.003692 2.267660 -0.020271
 v 0.364443 2.143328 -0.245018

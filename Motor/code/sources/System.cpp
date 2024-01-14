@@ -6,7 +6,7 @@
 #include "internal/Window.hpp"
 #include "Scene.hpp"
 
-
+// OpenGL-toolkit
 #include <Model_Obj.hpp>
 #include <Light.hpp>
 #include <Camera.hpp>
@@ -18,8 +18,6 @@ using namespace glt;
 
 namespace engine
 {
-
-
     RenderSystem::RenderSystem(Scene * scene) : System (scene)
     {
         next_entity_id = 0;
@@ -44,6 +42,7 @@ namespace engine
 
         if (component_id == "model")
         {
+            //Cannot open file
             model_path = "../../Demo/binaries/Robot.obj";
             entity_id = "model" + std::to_string(next_entity_id++);
 
