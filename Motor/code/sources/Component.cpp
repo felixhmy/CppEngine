@@ -15,7 +15,7 @@ namespace engine
         matrix = glm::rotate(matrix, glm::radians(rotation.y), glm::vec3(0, 1, 0)); // Y
         matrix = glm::rotate(matrix, glm::radians(rotation.z), glm::vec3(0, 0, 1)); // Z
         matrix = glm::scale(matrix, scale);
-
+        
         if (parent)
         {
             return parent->get_matrix() * matrix;
@@ -24,5 +24,6 @@ namespace engine
         {
             return matrix;
         }
+
     }
 }

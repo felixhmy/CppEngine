@@ -34,16 +34,16 @@ namespace engine
 	{
 		// cargar entity
 		auto entity = std::make_shared<Entity>();
-
 		entities[render_system.entity_id] = entity;
-		
-
 		//transform
-		entity->get_transform();
-
+		entity->get_transform().position = (glm::vec3(2, 2, 0));
 		//component
 		auto component = render_system.create_component(*entity, "model");
 		entity->add("model", component);
+
+
+
+
 	}
 
 

@@ -16,7 +16,7 @@ namespace engine
         messages.push_back(message);
     }
 
-    //// Envía todos los mensajes pendientes a sus listerners.
+    // Envía todos los mensajes pendientes a sus listerners.
     void Message_Dispatcher::execute(float t)
     {
         for (auto& message : messages)

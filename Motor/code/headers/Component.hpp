@@ -32,9 +32,9 @@ namespace engine
     struct Transform_Component : public Component
     {
         Transform_Component* parent;
-        glm::vec3 position;
-        glm::vec3 rotation;
-        glm::vec3 scale;
+        glm::vec3 position = glm::vec3(0,0,0);
+        glm::vec3 rotation = glm::vec3(0, 0, 0);
+        glm::vec3 scale = glm::vec3(1, 1, 1);
         glm::mat4 get_matrix() const;  // Función para calcular la matriz de transformación.
     };
 
