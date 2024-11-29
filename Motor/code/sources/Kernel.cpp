@@ -1,9 +1,11 @@
+// Autor: felixhmy
+
 #include "Kernel.hpp"
 #include "Timer.hpp"
 
 namespace engine
 {
-    // Añade una tarea a la lista.
+    // AÃ±ade una tarea a la lista.
     void Kernel::add(Task& task)
     {
         tasks.push_back(&task);
