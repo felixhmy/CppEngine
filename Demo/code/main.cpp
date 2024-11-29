@@ -1,3 +1,5 @@
+// Autor: felixhmy
+
 #include "Scene.hpp"
 
 using namespace engine;
