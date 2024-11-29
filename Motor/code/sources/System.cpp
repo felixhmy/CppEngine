@@ -1,3 +1,5 @@
+// Autor: felixhmy
+
 #include "System.hpp"
 #include "Component.hpp"
 #include "Entity.hpp"
