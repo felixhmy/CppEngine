@@ -1,3 +1,5 @@
+// Autor: felixhmy
+
 #include "Entity.hpp"
 
 namespace engine
