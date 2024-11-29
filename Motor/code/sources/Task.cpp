@@ -1,5 +1,3 @@
-// Realizado por: Félix Hernández Muñoz - Yusta
-
 #include "Task.hpp"
 #include "internal/Keyboard.hpp"
 #include "Scene.hpp"

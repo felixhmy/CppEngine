@@ -1,5 +1,3 @@
-// Realizado por: Félix Hernández Muñoz - Yusta
-
 #include "System.hpp"
 #include "Component.hpp"
 #include "Entity.hpp"

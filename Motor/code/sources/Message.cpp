@@ -1,5 +1,3 @@
-// Realizado por: Félix Hernández Muñoz - Yusta
-
 #include "Message.hpp"
 
 namespace engine

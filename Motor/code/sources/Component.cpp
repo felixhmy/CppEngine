@@ -1,5 +1,3 @@
-// Realizado por: Félix Hernández Muñoz - Yusta
-
 #include "Component.hpp"
 
 #include <glm/gtc/matrix_transform.hpp>

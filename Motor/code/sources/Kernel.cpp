@@ -1,5 +1,3 @@
-// Realizado por: Félix Hernández Muñoz - Yusta
-
 #include "Kernel.hpp"
 #include "Timer.hpp"
 
