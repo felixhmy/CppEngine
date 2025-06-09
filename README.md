@@ -1,12 +1,13 @@
-# Motor gráfico C++
-Pequeño motor gráfico desarrollado en Visual Studio basado en C++.
-Desarrollado mediante el uso de las librerias SDL2, GLM y una versión simplificada de OpenGL.
+# C++ Graphics Engine
+A small graphics engine developed in Visual Studio based on C++.
+Developed using the SDL2, GLM libraries, and a simplified version of OpenGL.
 
-## Estructura
-Al estar creado en Visual Studio 2022, el motor está dividido en 2 proyectos.
+## Structure
+Being created in Visual Studio 2022, the engine is divided into 2 projects.
 
-### Motor
-En esta parte es donde se gestionan las librerias y toda la estructura básica del motor.
+### Engine
+This part is where the libraries and the entire basic structure of the engine are managed.
+
 ### Demo
-En esta parte es donde se puede llamar al **motor** y crear con esta base el proyecto a desarrollar.
-La versión actual es un prototipo sencillo para poder ajustarlo a lo que se quiera crear.
+In this part, the **engine** can be called to build the project to be developed on this base.
+The current version is a simple prototype that can be adjusted to whatever you want to create.
